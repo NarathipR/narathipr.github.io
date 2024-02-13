@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Narathip Rodwarna: Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			p {
+				text-align: justify;
+				text-indent: 20px; /* Adjust the value as per your requirement */
+
+			}
+			.center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        	}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<header id="header">
+								<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/narathip-rodwarna/" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+								</ul>
+							</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>A Comparative Analysis of Distracted Driver Detection</h1>
+									</header>
+
+									<img src="images/distracted_driver/output_DEb8oT.gif" width="500" alt="" />
+									<h2>Introduction</h2>
+									<p>Detecting distracted drivers is crucial for enhancing road safety and preventing accidents, 
+										injuries, and fatalities. It reduces accident rates, preserves human lives, and prevents property damage, 
+										contributing to overall road safety. Integrating technology for detecting distracted driving aligns with advancements in driver assistance systems. 
+										This project aims to contribute significantly to road safety by addressing the critical issue of distracted driving. 
+										Our methodology involves a thorough investigation of two distinct approaches for detecting instances of 
+										distracted driving: Convolutional Neural Network (CNN) and Pose Estimation. 
+									</p>
+									
+									<hr class="major" />
+									<h2>Goal</h2>
+									<p> The specific objectives include the development of a CNN model (Method 1) to detect driver behavior and the integration of facial and upper body pose estimation, including hands, to assess the level of driver distraction (Method 2).</p>
+									
+									<hr class="major" />
+									<h2>Dataset</h2>
+										<h3>State Farm Distracted Driver Detection | Kaggle [1] </h3>
+											<dl>
+											<dd>
+												<p>There are 22,424 images with 10 classes taken from the front console and the size is 640 x 480 pixels. The classes include normal driving(C0), texting - right(C1), talking on the phone - right(C2), texting - left(C3), talking on the phone - left(C4), operating the radio(C5), drinking(C6), reaching behind(C7), hair and makeup(C8), talking to passengers((C9). This dataset is used in CNN-based approach and Pose detection using Upper Body. For the CNN approach, the data is divided into 3 sets: training set 70%, validation set 15%, and test set 15%.</p> 												
+										
+											</dd>
+										
+						
+									<hr class="major" />
+
+									<h2>Method</h2>
+									<dl>
+									
+										<h3>CNN-based Method</h3>
+										<dd>
+											<p>The image processing pipeline comprises steps as follows. In Step 1, Image Preprocessing, input images undergo cropping and resizing to 64 x 64 pixels. Additionally, an optional grayscale conversion is implemented to reduce trainable parameters, thereby optimizing computational resources. Step 2, Data Augmentation is applied to augment input images, enhancing the model's robustness through rotations, zoom, width shift and height shift. In Step 3, Model Training, the training set is utilized for model training, employing a spectrum of architectures including Convolutional Neural Networks (CNN), VGG16-based CNN, ResNet50-based CNN, and ResNet101-based CNN. Concluding the process in Step 4, Model Testing evaluates the trained model's accuracy across diverse architectures.
+											</p>
+											
+										</dd>
+
+										<h3>Pose Estimation Based</h3>
+										<dd>
+											<p>The approach laid out in Fig.1 harnesses the capabilities of Mediapipe Pose Detection to detect various driver behaviors, leveraging pose landmarks and criteria set for different distractions. It involves specifying landmarks and their spatial relationships to identify distracted driving instances accurately. The thresholds for each distracted scenario were based primarily on trial and error and then secondarily on training images from the State Farm Dataset. The thresholds were fine-tuned until the system was able to identify behaviors based on specific scenarios and gestures. </p>
+											<div class="center-image"><img src="images/distracted_driver/diagram_pose_est.jpg" width="900" alt="" /></div>
+											<div class="center-image"><p>Fig.1 Diagram of Pose Detection using Upper Body</p></div>
+
+										</dd>
+									
+									</dl>
+									<hr class="major" />
+
+									<h2>Result</h2>
+									<dl>
+									
+										<h3>CNN-based Method</h3>
+										<dd>
+											<p>After the training process, it was observed that both case 1 and case 2 demonstrated the best performance compared to the other methods. The CNN with grayscale images 
+												achieved an accuracy of 97.9%, while the CNN with RGB images achieved an accuracy of 97.7%. Furthermore, each label exhibited a prediction accuracy of over 93%. 
+												Additionally, when the driver is distracted, both models in case 1 and case 2 demonstrated a high detection accuracy of 99.9%. In terms of image input, the evaluation suggests 
+												that grayscale images retain meaningful features, providing comparable results with a smaller data size.
+												Regarding training time, it is notable that the simple CNNs in case 1 and case 2 achieve a 90% convergence much faster than models employing the transfer learning method. 
+												The simple CNNs reach 90% accuracy within the first 20 epochs, 
+												a substantial improvement compared to the transfer learning approach.
+											</p>
+											<div class="center-image">
+
+											<img src="images/distracted_driver/cnn_grayscale_confusion_percent.png" width="400" alt="" />
+											<img src="images/distracted_driver/cnn_color_confusion_percent.png" width="400" alt="" />
+											</div>
+											<div class="center-image"><p>Fig.2 Confusion Matrix (Left) CNN with Grayscale images (Right) CNN with RGB images</p></div>
+											<div class="center-image"><p>Table.1 Performance Comparison of CNN Method</p></div>
+											<div class="center-image"><img src="images/distracted_driver/table_cnn.png" width="800" alt="" /></div>
+
+										</dd>
+										<p>    </p>
+										<h3>Pose Estimation Based</h3>
+										<dd>
+											<p>When the forward-facing 90-degree of lidar reading detects an obstacle at
+												a predetermined distance, the car is able to stop preventing any collision with
+												the identified object. After the objects are removed, the car can resume
+												following the lane.</p>
+												<div class="center-image">
+
+												<img src="images/distracted_driver/result_posr_est.png" width="700" alt="" />
+												</div>
+												<div class="center-image">
+
+												<p>Fig.3 Result of Pose Detection using Upper Body</p>
+												</div>
+
+										</dd>
+									
+									</dl>
+
+								<hr class="major" />
+									<h2>Discussion and Conclusions</h2>
+										<p>Advantages of utilizing Convolutional Neural Networks (CNNs) for distracted driver detection are evident in their outstanding performance, 
+											particularly with simple CNN models that outperform counterparts like Resnet50, Resnet101, and VGG16 in transfer learning scenarios. 
+											The simplicity of CNNs results in quicker convergence, achieving 90% accuracy on the validation set within 20 epochs, 
+											highlighting their ease of training. Additionally, the reduced number of trainable parameters in simple CNNs minimizes the risk of overfitting, 
+											making them well-suited for various applications. Moreover, CNNs showcase strengths in capturing meaningful patterns through filters 
+											and demonstrating translation invariance, allowing for effective recognition of movements irrespective of their position. 
+											This translation invariance, coupled with reduced sensitivity to spatial variability, enhances CNNs' robustness in handling diverse spatial patterns.
+											 Furthermore, the automatic feature learning capability of CNNs eliminates the need for manual feature engineering. </p>
+											
+											<p>However, despite these advantages, applying CNNs to this task presents some challenges. The computational intensity of convolutional operations demands substantial resources, resulting in time-consuming and resource-intensive training. The training process also requires ample memory, posing limitations, especially in resource-constrained environments. Additionally, the need for large datasets for effective training and interpretability challenges associated with complex neural networks are factors that need consideration when working with the model.</p>
+											<p>For Mediapipe Pose detection using Upper Body we also encountered multiple challenges. Specifically, identifying distinct distracted driving behaviors like texting or reaching behind using pose landmarks alone proved challenging due to pose variations, lighting disparities, and occlusions. The model generated false positives and missed certain instances due to the complexity of the hand positions. For example, in a lot of cases, it was difficult for the module to identify the arms correctly which led to false positives. </p>
+											<p>While the analysis yielded insights into using Mediapipe Pose Detection for distracted driving detection, the results highlight the complexities and challenges in solely relying on pose landmarks only to identify the driver’s arm, eyes or mouth. Since this approach solely relies on pose landmarks, which might not capture all subtleties or contexts of distracted driving behavior therefore CNN can be considered much better for checking if the driver is distracted as it achieves an accuracy of 90%.
+											</p>
+
+								<hr class="major" />
+								<h2>Related Skills</h2>
+								<ul>
+									<li>Computer Vision</li>
+									<li>Pytorch</li>
+									<li>Convolutional Neural Network (CNN)</li>
+									<li>Pose Estimation</li>
+								</ul>
+
+									<hr class="major" />
+									<h2>Contributors</h2>
+									<ul>
+										<li>Narathip Rodwarna</li>
+										<li>Janmejay Rathi</li>
+										<li>Mahi Ranka</li>
+									</ul>
+
+									<hr class="major" />
+									<h2>References</h2>
+										<p>[1] “State Farm Distracted Driver Detection.” kaggle.com.
+											https://www.kaggle.com/competitions/state-farm-distracted-driver-detection/data (accessed Oct. 18, 2023).</p>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+				<div id="sidebar">
+					<div class="inner">
+						<!-- Menu -->
+							<nav id="menu">
+								<header class="major">
+									<h2>Menu</h2>
+								</header>
+								<ul>
+									<li><a href="index.html">Homepage</a></li>
+									<li><a href="index.html#area of interest">Area of Interest</a></li>
+									<li><a href="index.html#education">Education</a></li>
+									<li><a href="index.html#experience">Professional Experience</a></li>
+									<li><a href="index.html#projects">Projects</a></li>
+								</ul>
+							</nav>
+
+						<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Contact</h2>
+								</header>
+								<ul class="contact">
+									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/narathip-rodwarna/">Narathip Rodwarna</a></li>
+									<li class="icon solid fa-envelope"><a href="mailto:rodwarna@gmail.com">nrodwarna@gmail.com</a></li>
+									<li class="icon solid fa-phone">(+1) 917-756-4639</li>
+									<li class="icon solid fa-home">Champaign, IL 61820</li>
+
+								</ul>
+							</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

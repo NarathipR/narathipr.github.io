@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Narathip Rodwarna: Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<header id="header">
+								<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/narathip-rodwarna/" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+								</ul>
+							</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>U.S. Gas Price Prediction with Long Short-term Memory(LSTM)</h1>
+									</header>
+
+									<img src="images/gasprice/engin-akyurt-f4UbPVbJcjw-unsplash.jpg" width="500" alt="" />
+									<h2>Problem Statement</h2>
+									<p>Reliable gas price predictions are essential for effective resource allocation and decision-making across sectors. There is a critical need for accurate forecasting methods to mitigate the impacts of fluctuation of gas prices on stakeholders.</p>
+									
+									<hr class="major" />
+									<h2>Goal</h2>
+									<p>The goal of this project is to develop a robust and accurate gas price forecasting model using convolutional neural network(CNN).</p>
+									
+									<hr class="major" />
+									<h2>Dataset</h2>
+									<p>The U.S. Energy Information Administration has documented the Gasoline Price and Exportation data, encompassing 1142 records spanning from November 9, 2001, to September 22, 2023.</p>
+
+									<hr class="major" />
+									<h2>Approach</h2>
+									<p>There are three approaches including Polynomial Regression, CNN and RNN.</p>
+									<p>Table.1 Approach </p>
+									<img src="images/gasprice/approach.png" width="800" alt="" />
+									
+
+									<hr class="major" />
+									<h2>Result</h2>
+									<p>It was determined that the best CNN model has parameters of [8,8,32] with a learning
+										rate of 0.0006, 4 layers and the Adam optimizer. The SGD and RMSprop optimizers have a
+										higher loss than the Adam optimizer and get the same result with each other with little
+										improvement. The model was then tested with minibatch and it led to a faster convergence to the
+										loss value. The validation loss was 0.45 USD<sup>2</sup> and MAE was 0.64 USD. The baseline model's, a
+										9 degree linear regression, MAE was 0.34 USD which outperformed the deep learning model
+										and is recommended for the dataset. As recurrent neural network(RNN) is good to be used on
+										time series data, the gasoline price can be predicted using previous price information only. The
+										validation loss was 0.0074 USD<sup>2</sup> and MAE for test data was 0.1 USD.</p>
+										
+									<span class="image fit"><img src="images/gasprice/rnngraph.png" alt="" /></span>
+									<p>Fig.1 Prediction from RNN model</p>
+
+									<hr class="major" />
+									<h2>Related Skills</h2>
+									<ul>
+										<li>Pytorch</li>
+										<li>Tensorflow</li>
+										<li>Convolutional Neural Network (CNN)</li>
+										<li>Recurrent Neural Network (RNN)</li>
+									</ul>
+
+									<hr class="major" />
+									<h2>Contributors</h2>
+									<ul>
+										<li>Narathip Rodwarna</li>
+										<li>Ruoyu Sun</li>
+										<li>Liam Harding</li>
+									</ul>
+
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+				<div id="sidebar">
+					<div class="inner">
+						<!-- Menu -->
+							<nav id="menu">
+								<header class="major">
+									<h2>Menu</h2>
+								</header>
+								<ul>
+									<li><a href="index.html">Homepage</a></li>
+									<li><a href="index.html#area of interest">Area of Interest</a></li>
+									<li><a href="index.html#education">Education</a></li>
+									<li><a href="index.html#experience">Professional Experience</a></li>
+									<li><a href="index.html#projects">Projects</a></li>
+								</ul>
+							</nav>
+
+						<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Contact</h2>
+								</header>
+								<ul class="contact">
+									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/narathip-rodwarna/">Narathip Rodwarna</a></li>
+									<li class="icon solid fa-envelope"><a href="mailto:rodwarna@gmail.com">nrodwarna@gmail.com</a></li>
+									<li class="icon solid fa-phone">(+1) 917-756-4639</li>
+									<li class="icon solid fa-home">Champaign, IL 61820</li>
+
+								</ul>
+							</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

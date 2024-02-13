@@ -10,6 +10,23 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			p {
+				text-align: justify;
+	
+			}
+	
+			.center-image {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+	
+			.box {
+	
+				background-color: #F5F6F7;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -32,12 +49,16 @@
 								<section>
 									<header class="main">
 										<h2>F1tenth Line Following and Obstacle Avoidance</h2>
-
 									</header>
-									<h4>Summary: Develop an autonomous system utilizing real-world sensors and visual informationDevelop an autonomous system utilizing real-world sensors and visual informationDevelop an autonomous system utilizing real-world sensors and visual informationDevelop an autonomous system utilizing real-world sensors and visual informationDevelop an autonomous system utilizing real-world sensors and visual information</h4>
+									<div class="box">
+										<p>The goal is to develop an autonomous system using real-world sensors and visual data, validating computer vision algorithms and PID controller in real-world scenarios. 
+											Results indicate successful line following and obstacle avoidance, showcasing proficiency in computer vision, PID control, and ROS integration with LiDAR.
+										</p>
+									</div>
 
+									<div class="center-image"><img src="images/f1tenth/f1tenth_car.png" width="500" alt="" /></div>
+									<hr class="major" />
 
-									<img src="images/f1tenth/f1tenth_car.png" width="500" alt="" />
 									<h2>Goal</h2>
 									<ul>
 										<li>Develop an autonomous system utilizing real-world sensors and visual information.
@@ -60,8 +81,8 @@
 								</div>
 								<div class="col-6 col-12-medium">
 
-									<img src="images/f1tenth/system_overview.png" width="350" alt="" />
-									<p>Fig.1 System Overview</p>
+									<div class="center-image"><img src="images/f1tenth/system_overview.png" width="350" alt="" /></div>
+									<div class="center-image"><p>Fig.1 System Overview</p></div>
 
 
 								</div>
@@ -112,8 +133,8 @@
 											</p>
 										</div>
 											<div class="col-6 col-12-medium">
-												<img src="images/f1tenth/error_calculation.png" width="300" alt="" />
-												<p>Fig.2 Error Calculation</p>
+												<div class="center-image"><img src="images/f1tenth/error_calculation.png" width="300" alt="" /></div>
+												<div class="center-image"><p>Fig.2 Error Calculation</p></div>
 											</div>
 
 											
@@ -139,7 +160,7 @@
 												<source src="images/f1tenth/f1tenth_demo.mov" type="video/mp4">
 										</video>
 										</dd>
-
+										<p></p>
 										<h3>Obstacle Avoidance</h3>
 										<dd>
 											<p>When the forward-facing 90-degree of lidar reading detects an obstacle at

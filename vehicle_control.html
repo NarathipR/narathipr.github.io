@@ -5,185 +5,233 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Narathip Rodwarna: Projects</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Narathip Rodwarna: Projects</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+		p {
+			text-align: justify;
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+		}
 
-							<!-- Header -->
-							<header id="header">
-								<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
-								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/narathip-rodwarna/" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
-								</ul>
-							</header>
+		.center-image {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Vehicle Control and Localization</h1>
-									</header>
+		.box {
 
-									<img src="images/vehicle_control/rviz_full.png" width="1000" alt="" />
-									<h2>Description</h2>
-									<p>These tasks are components of ECE484 Principles of Safe Autonomy at the University of Illinois.</p>
-									
-									<hr class="major" />
-									<h2>Overview</h2>
-									<ol>
-										<li>Lane Detection</li>
-										<li>Lateral Controller</li>
-										<li>Particle Filters</li>
-									</ol>
-									
-									<hr class="major" />
-									<h2>1) Lane Detection</h2>
-									<dl>
-										<h3>Implementation</h3>
-										<dd>
-										<p>For the lane detection task from a video, the steps are as follows:</p>
-											<dl>
-											<dt>Gradient Threshold</dt>
-											<dd>
-												<p>In the gradient binary image, we compute the gradient in both the x and y directions. We combine these gradients using a linear combination. Edges are extracted if the gradient falls within the range defined by the minimum threshold (50) and maximum threshold (150).
-													</p>
-										
-											</dd>
-											<dt>Color Threshold</dt>
-											<dd>
-												<p>We utilize the HSL color space for this task. In scenarios other than snow, we binarize images using the Saturation (S) channel. Road lines, being white and yellow, typically exhibit higher saturation compared to road surfaces. This approach is more robust in various lighting conditions. However, in snowy conditions, we switch to the L color space for binarization, leveraging the significant contrast between the road surface and snow.</p>
-											</dd>
-											<dt>Perspective Transform</dt>
-											<dd>
-												<p>The perspective transform involves selecting coordinates representing the ends of the left and right lanes as the source points. The destination points correspond to the corners of the original images ([0, 0], [w, 0], [0, h], [w, h]). To ensure robust lane detection across different car orientations, we account for the window frame when the car is turning, guaranteeing accurate detection of left and right lanes.</p>
-											</dd>
-											<dt>Lane Fitting</dt>
-											<dd>
-												<p>The data obtained from the perspective transform is utilized to fit a second-order polynomial line.
-													</p>
-											</dd>
-										</dl>
-										</dd>
-										<h3>Result</h3>
-										<video controls autoplay loop width="640" height="360">
-												<source src="images\vehicle_control\mp1_0830_web.mp4" type="video/mp4">
-										</video>
-									</dl>
+			background-color: #F5F6F7;
+		}
+	</style>
+</head>
 
-									<hr class="major" />
-									<h2>2) Lateral Controller</h2>
-									<dl>
-									
-											<h3>Implementation</h3>
-											<dd>
-												<p>We're integrating a lateral controller into a vehicle, which uses the Pure Pursuit algorithm to calculate the steering angle. This algorithm focuses on a look-ahead point positioned at a set distance ahead on the vehicle’s path. Our method involves setting the average of the two upcoming unreached waypoints as the look-ahead point. By doing this, the vehicle can anticipate its path better, leading to smoother turns and maintaining its course towards the next target point. This approach not only improves driving stability but also simplifies the model.</p>
-										
-											</dd>
-											
-										
-										<h3>Result</h3>
-										<video controls autoplay loop width="640" height="360">
-												<source src="images\vehicle_control\mp2_2.mp4" type="video/mp4">
-										</video>
-									</dl>
+<body class="is-preload">
 
-									<hr class="major" />
-									<h2>3) Particle Filters</h2>
-									<dl>
-										<h3>Implementation</h3>
-										<dd>
-										<p>Lidar readings from 8 directions around the vehicle are utilized for vehicle localization using particle filtering. The process involves sampling particle states, calculating weights, and resampling particles to refine the vehicle's position estimate.</p>
-											
-											</dd>
-											
-										<h3>Result</h3>
-										<video controls autoplay loop width="640" height="360">
-												<source src="images\vehicle_control\mp3.mp4" type="video/mp4">
-										</video>
-									</dl>
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/narathip-rodwarna/"
+								class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+					</ul>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h2>Vehicle Control and Localization</h2>
+					</header>
+
+					<img src="images/vehicle_control/rviz_full.png" width="1000" alt="" />
+					<h2>Description</h2>
+					<p>These tasks are components of ECE484 Principles of Safe Autonomy at the University of Illinois.
+					</p>
+
+					<hr class="major" />
+					<h2>Overview</h2>
+					<ol>
+						<li>Lane Detection</li>
+						<li>Lateral Controller</li>
+						<li>Particle Filters</li>
+					</ol>
+
+					<hr class="major" />
+					<h2>1) Lane Detection</h2>
+					<dl>
+						<h3>Implementation</h3>
+						<dd>
+							<p>For the lane detection task from a video, the steps are as follows:</p>
+							<dl>
+								<dt>Gradient Threshold</dt>
+								<dd>
+									<p>In the gradient binary image, we compute the gradient in both the x and y
+										directions. We combine these gradients using a linear combination. Edges are
+										extracted if the gradient falls within the range defined by the minimum
+										threshold (50) and maximum threshold (150).
+									</p>
+
+								</dd>
+								<dt>Color Threshold</dt>
+								<dd>
+									<p>We utilize the HSL color space for this task. In scenarios other than snow, we
+										binarize images using the Saturation (S) channel. Road lines, being white and
+										yellow, typically exhibit higher saturation compared to road surfaces. This
+										approach is more robust in various lighting conditions. However, in snowy
+										conditions, we switch to the L color space for binarization, leveraging the
+										significant contrast between the road surface and snow.</p>
+								</dd>
+								<dt>Perspective Transform</dt>
+								<dd>
+									<p>The perspective transform involves selecting coordinates representing the ends of
+										the left and right lanes as the source points. The destination points correspond
+										to the corners of the original images ([0, 0], [w, 0], [0, h], [w, h]). To
+										ensure robust lane detection across different car orientations, we account for
+										the window frame when the car is turning, guaranteeing accurate detection of
+										left and right lanes.</p>
+								</dd>
+								<dt>Lane Fitting</dt>
+								<dd>
+									<p>The data obtained from the perspective transform is utilized to fit a
+										second-order polynomial line.
+									</p>
+								</dd>
+							</dl>
+						</dd>
+						<h3>Result</h3>
+						<video controls autoplay loop width="640" height="360">
+							<source src="images\vehicle_control\mp1_0830_web.mp4" type="video/mp4">
+						</video>
+					</dl>
+
+					<hr class="major" />
+					<h2>2) Lateral Controller</h2>
+					<dl>
+
+						<h3>Implementation</h3>
+						<dd>
+							<p>We're integrating a lateral controller into a vehicle, which uses the Pure Pursuit
+								algorithm to calculate the steering angle. This algorithm focuses on a look-ahead point
+								positioned at a set distance ahead on the vehicle’s path. Our method involves setting
+								the average of the two upcoming unreached waypoints as the look-ahead point. By doing
+								this, the vehicle can anticipate its path better, leading to smoother turns and
+								maintaining its course towards the next target point. This approach not only improves
+								driving stability but also simplifies the model.</p>
+
+						</dd>
 
 
-									<hr class="major" />
-									<h2>Related Skills</h2>
-									<ul>
-										<li>Robot Operating System (ROS)</li>
-										<li>Computer Vision</li>
-										<li>OpenCV</li>
-										<li>State Estimation and Localization</li>
-										<li>Vehicle Control</li>
-									</ul>
+						<h3>Result</h3>
+						<video controls autoplay loop width="640" height="360">
+							<source src="images\vehicle_control\mp2_2.mp4" type="video/mp4">
+						</video>
+					</dl>
 
-									<hr class="major" />
-									<h2>Contributors</h2>
-									<ul>
-										<li>Narathip Rodwarna</li>
-										<li>Chu-Lin Huang</li>
-										<li>Hsuan-Jung Pan</li>
-									</ul>
+					<hr class="major" />
+					<h2>3) Particle Filters</h2>
+					<dl>
+						<h3>Implementation</h3>
+						<dd>
+							<p>Lidar readings from 8 directions around the vehicle are utilized for vehicle localization
+								using particle filtering. The process involves sampling particle states, calculating
+								weights, and resampling particles to refine the vehicle's position estimate.</p>
+
+						</dd>
+
+						<h3>Result</h3>
+						<video controls autoplay loop width="640" height="360">
+							<source src="images\vehicle_control\mp3.mp4" type="video/mp4">
+						</video>
+					</dl>
 
 
-								</section>
+					<hr class="major" />
+					<h2>Related Skills</h2>
+					<ul>
+						<li>Robot Operating System (ROS)</li>
+						<li>Computer Vision</li>
+						<li>OpenCV</li>
+						<li>State Estimation and Localization</li>
+						<li>Vehicle Control</li>
+					</ul>
 
-						</div>
-					</div>
+					<hr class="major" />
+					<h2>Contributors</h2>
+					<ul>
+						<li>Narathip Rodwarna</li>
+						<li>Chu-Lin Huang</li>
+						<li>Hsuan-Jung Pan</li>
+					</ul>
 
-				<!-- Sidebar -->
-				<div id="sidebar">
-					<div class="inner">
-						<!-- Menu -->
-							<nav id="menu">
-								<header class="major">
-									<h2>Menu</h2>
-								</header>
-								<ul>
-									<li><a href="index.html">Homepage</a></li>
-									<li><a href="index.html#area of interest">Area of Interest</a></li>
-									<li><a href="index.html#education">Education</a></li>
-									<li><a href="index.html#experience">Professional Experience</a></li>
-									<li><a href="index.html#projects">Projects</a></li>
-								</ul>
-							</nav>
 
-						<!-- Section -->
-							<section>
-								<header class="major">
-									<h2>Contact</h2>
-								</header>
-								<ul class="contact">
-									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/narathip-rodwarna/">Narathip Rodwarna</a></li>
-									<li class="icon solid fa-envelope"><a href="mailto:rodwarna@gmail.com">nrodwarna@gmail.com</a></li>
-									<li class="icon solid fa-phone">(+1) 917-756-4639</li>
-									<li class="icon solid fa-home">Champaign, IL 61820</li>
-
-								</ul>
-							</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
-						</div>
-					</div>
+				</section>
 
 			</div>
+		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="index.html#area of interest">Area of Interest</a></li>
+						<li><a href="index.html#education">Education</a></li>
+						<li><a href="index.html#experience">Professional Experience</a></li>
+						<li><a href="index.html#projects">Projects</a></li>
+					</ul>
+				</nav>
 
-	</body>
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Contact</h2>
+					</header>
+					<ul class="contact">
+						<li class="icon brands fa-linkedin"><a
+								href="https://www.linkedin.com/in/narathip-rodwarna/">Narathip Rodwarna</a></li>
+						<li class="icon solid fa-envelope"><a href="mailto:rodwarna@gmail.com">nrodwarna@gmail.com</a>
+						</li>
+						<li class="icon solid fa-phone">(+1) 917-756-4639</li>
+						<li class="icon solid fa-home">Champaign, IL 61820</li>
+
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+							UP</a>.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

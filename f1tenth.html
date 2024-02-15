@@ -5,251 +5,270 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Narathip Rodwarna: Projects</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			p {
-				text-align: justify;
-	
-			}
-	
-			.center-image {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-	
-			.box {
-	
-				background-color: #F5F6F7;
-			}
-			figcaption {
+
+<head>
+	<title>Narathip Rodwarna: Projects</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+		p {
+			text-align: justify;
+
+		}
+
+		.center-image {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.box {
+
+			background-color: #F5F6F7;
+		}
+
+		figcaption {
 			text-align: center;
 			font-style: italic;
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+		}
+	</style>
+</head>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<body class="is-preload">
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-							<!-- Header -->
-							<header id="header">
-								<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
-								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/narathip-rodwarna/" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
-								</ul>
-							</header>
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h2>F1tenth Line Following and Obstacle Avoidance</h2>
-									</header>
-									<div class="box">
-										<p>The goal is to develop an autonomous system using real-world sensors and visual data.  The system utilizes images from RGB camera for lane detection and employs a PID Controller for control purposes. Additionally, obstacle avoidance capabilities have been integrated using LiDAR. The outcomes of this endeavor showcase proficient line following and effective obstacle avoidance. 
-										</p>
-									</div>
-									<figure>
-										<div class="center-image"><img src="images/f1tenth/f1tenth_car.png" width="500" alt="" /></div>
-									<figcaption>Source: f1tenth.org</figcaption>
-									</figure>
+				<!-- Header -->
+				<header id="header">
+					<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/narathip-rodwarna/"
+								class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+					</ul>
+				</header>
 
-									<hr class="major" />
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h2>F1tenth Line Following and Obstacle Avoidance</h2>
+					</header>
+					<div class="box">
+						<p>The goal is to develop an autonomous system using real-world sensors and visual data. The
+							system utilizes images from RGB camera for lane detection and employs a PID Controller for
+							control purposes. Additionally, obstacle avoidance capabilities have been integrated using
+							LiDAR. The outcomes of this endeavor showcase proficient line following and effective
+							obstacle avoidance.
+						</p>
+					</div>
+					<figure>
+						<div class="center-image"><img src="images/f1tenth/f1tenth_car.png" width="500" alt="" /></div>
+						<figcaption>Source: f1tenth.org</figcaption>
+					</figure>
 
-									<h2>Goal</h2>
-									<ul>
-										<li>Develop an autonomous system utilizing real-world sensors and visual information.
-										</li>
-										<li>Validate the computer vision algorithms and PID controller in a real-world context.</li>
-									</ul>
-									
-									<hr class="major" />
-									<div class="row gtr-200">
+					<hr class="major" />
 
-									<div class="col-6 col-12-medium">
+					<h2>Goal</h2>
+					<ul>
+						<li>Develop an autonomous system utilizing real-world sensors and visual information.
+						</li>
+						<li>Validate the computer vision algorithms and PID controller in a real-world context.</li>
+					</ul>
 
-									<h2>System Overview</h2>
-									<ul>
-										<li>Line Detection using RGB Camera</li>
-										<li>Line Fitting and Error Computing</li>
-										<li>PID Controller</li>
-										<li>Obstacle Avoidance with LiDAR</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-medium">
+					<hr class="major" />
+					<div class="row gtr-200">
 
-									<div class="center-image"><img src="images/f1tenth/system_overview.png" width="350" alt="" /></div>
-									<div class="center-image"><p>Fig.1 System Overview</p></div>
+						<div class="col-6 col-12-medium">
+
+							<h2>System Overview</h2>
+							<ul>
+								<li>Line Detection using RGB Camera</li>
+								<li>Line Fitting and Error Computing</li>
+								<li>PID Controller</li>
+								<li>Obstacle Avoidance with LiDAR</li>
+							</ul>
+						</div>
+						<div class="col-6 col-12-medium">
+
+							<div class="center-image"><img src="images/f1tenth/system_overview.png" width="350"
+									alt="" /></div>
+							<div class="center-image">
+								<p>Fig.1 System Overview</p>
+							</div>
 
 
+						</div>
+					</div>
+
+					<hr class="major" />
+					<h2>Method</h2>
+					<dl>
+						<h3>Line Detection</h3>
+						<dd>
+							<dl>
+								<dt>Color Space Conversion</dt>
+								<dd>
+									<p>Converts the images from BGR to HSL color space.</p>
+
+								</dd>
+								<dt>Perspective Transformation</dt>
+								<dd>
+									<p>Transforms the images' perspective to estimate Bird's eye view.
+									</p>
+								</dd>
+								<dt>Color Thresholding</dt>
+								<dd>
+									<p>Extracts a yellow line from the environment using saturation channel.
+									</p>
+								</dd>
+								<dt>Getting Line Array</dt>
+								<dd>
+									<p>Uses pixel counting to distinguish the line from noise.
+									</p>
+								</dd>
+								<dt>Line Fitting</dt>
+								<dd>
+									<p>Selects 4 points to fit a quadratic equation representing the line.
+									</p>
+								</dd>
+							</dl>
+						</dd>
+						<div class="row gtr-200">
+							<div class="col-6 col-12-medium">
+
+								<h3>PID Controller</h3>
+								<p>The error is the difference between the lateral position of the
+									lookahead point derived from the line equation and the centerline of
+									the image. The controller utilizes the error to estimate the control signal
+									(steering angle) for correcting the direction. The tuning process
+									involves adjusting K, Ki, and Kd to optimize controller performance.
+								</p>
+							</div>
+							<div class="col-6 col-12-medium">
+								<div class="center-image"><img src="images/f1tenth/error_calculation.png" width="300"
+										alt="" /></div>
+								<div class="center-image">
+									<p>Fig.2 Error Calculation</p>
 								</div>
 							</div>
 
-									<hr class="major" />
-									<h2>Method</h2>
-									<dl>
-										<h3>Line Detection</h3>
-										<dd>
-											<dl>
-											<dt>Color Space Conversion</dt>
-											<dd>
-												<p>Converts the images from BGR to HSL color space.</p> 												
-										
-											</dd>
-											<dt>Perspective Transformation</dt>
-											<dd>
-												<p>Transforms the images' perspective to estimate Bird's eye view.
-												</p>
-											</dd>
-											<dt>Color Thresholding</dt>
-											<dd>
-												<p>Extracts a yellow line from the environment using saturation channel.
-												</p>
-											</dd>
-											<dt>Getting Line Array</dt>
-											<dd>
-												<p>Uses pixel counting to distinguish the line from noise.
-													</p>
-											</dd>
-											<dt>Line Fitting</dt>
-											<dd>
-											<p>Selects 4 points to fit a quadratic equation representing the line.
-											</p>
-											</dd>
-										</dl>
-										</dd>
-										<div class="row gtr-200">
-											<div class="col-6 col-12-medium">
-
-										<h3>PID Controller</h3>
-											<p>The error is the difference between the lateral position of the
-												lookahead point derived from the line equation and the centerline of
-												the image. The controller utilizes the error to estimate the control signal
-												(steering angle) for correcting the direction. The tuning process
-												involves adjusting K, Ki, and Kd to optimize controller performance.
-											</p>
-										</div>
-											<div class="col-6 col-12-medium">
-												<div class="center-image"><img src="images/f1tenth/error_calculation.png" width="300" alt="" /></div>
-												<div class="center-image"><p>Fig.2 Error Calculation</p></div>
-											</div>
-
-											
-										</div>
-
-									</dl>
-
-
-									<hr class="major" />
-									<h2>Result</h2>
-									<dl>
-									
-										<h3>Line Following</h3>
-										<dd>
-											<p>The car can adjust its direction to
-												accurately trace the line. Based on our
-												evaluation metric, the car demonstrates the
-												capability to complete three laps without disengaging from the centerline.</p>
-											<video controls autoplay loop width="500" height="280">
-												<source src="images/f1tenth/line_detection.mp4" type="video/mp4">
-										</video>
-											<video controls autoplay loop width="500" height="280">
-												<source src="images/f1tenth/f1tenth_demo.mov" type="video/mp4">
-										</video>
-										</dd>
-										<p></p>
-										<h3>Obstacle Avoidance</h3>
-										<dd>
-											<p>When the forward-facing 90-degree of lidar reading detects an obstacle at
-												a predetermined distance, the car is able to stop preventing any collision with
-												the identified object. After the objects are removed, the car can resume
-												following the lane.</p>
-											<video controls autoplay loop width="500" height="280">
-												<source src="images/f1tenth/f1tenth_obstacle.mp4" type="video/mp4">
-										</video>
-										</dd>
-									
-								</dl>
-								<hr class="major" />
-								<h2>Related Skills and Tools</h2>
-								<ul>
-									<li>Computer Vision</li>
-									<li>PID Controller</li>
-									<li>Robot Operating System (ROS)</li>
-									<li>LiDAR</li>
-								</ul>
-
-									<hr class="major" />
-									<h2>Contributors</h2>
-									<ul>
-										<li>Narathip Rodwarna</li>
-										<li>Kalaipriyan R</li>
-										<li>Chi-Min Liao</li>
-										<li>Hsuan-Jung Pan</li>
-									</ul>
-
-
-								</section>
 
 						</div>
-					</div>
 
-				<!-- Sidebar -->
-				<div id="sidebar">
-					<div class="inner">
-						<!-- Menu -->
-							<nav id="menu">
-								<header class="major">
-									<h2>Menu</h2>
-								</header>
-								<ul>
-									<li><a href="index.html">Homepage</a></li>
-									<li><a href="index.html#area of interest">Area of Interest</a></li>
-									<li><a href="index.html#education">Education</a></li>
-									<li><a href="index.html#experience">Professional Experience</a></li>
-									<li><a href="index.html#projects">Projects</a></li>
-								</ul>
-							</nav>
+					</dl>
 
-						<!-- Section -->
-							<section>
-								<header class="major">
-									<h2>Contact</h2>
-								</header>
-								<ul class="contact">
-									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/narathip-rodwarna/">Narathip Rodwarna</a></li>
-									<li class="icon solid fa-envelope"><a href="mailto:rodwarna@gmail.com">nrodwarna@gmail.com</a></li>
-									<li class="icon solid fa-phone">(+1) 917-756-4639</li>
-									<li class="icon solid fa-home">Champaign, IL 61820</li>
 
-								</ul>
-							</section>
+					<hr class="major" />
+					<h2>Result</h2>
+					<dl>
 
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+						<h3>Line Following</h3>
+						<dd>
+							<p>The car can adjust its direction to
+								accurately trace the line. Based on our
+								evaluation metric, the car demonstrates the
+								capability to complete three laps without disengaging from the centerline.</p>
+							<video controls autoplay loop width="500" height="280">
+								<source src="images/f1tenth/line_detection.mp4" type="video/mp4">
+							</video>
+							<video controls autoplay loop width="500" height="280">
+								<source src="images/f1tenth/f1tenth_demo.mov" type="video/mp4">
+							</video>
+						</dd>
+						<p></p>
+						<h3>Obstacle Avoidance</h3>
+						<dd>
+							<p>When the forward-facing 90-degree of lidar reading detects an obstacle at
+								a predetermined distance, the car is able to stop preventing any collision with
+								the identified object. After the objects are removed, the car can resume
+								following the lane.</p>
+							<video controls autoplay loop width="500" height="280">
+								<source src="images/f1tenth/f1tenth_obstacle.mp4" type="video/mp4">
+							</video>
+						</dd>
 
-						</div>
-					</div>
+					</dl>
+					<hr class="major" />
+					<h2>Related Skills and Tools</h2>
+					<ul>
+						<li>Computer Vision</li>
+						<li>PID Controller</li>
+						<li>Robot Operating System (ROS)</li>
+						<li>LiDAR</li>
+					</ul>
+
+					<hr class="major" />
+					<h2>Contributors</h2>
+					<ul>
+						<li>Narathip Rodwarna</li>
+						<li>Kalaipriyan R</li>
+						<li>Chi-Min Liao</li>
+						<li>Hsuan-Jung Pan</li>
+					</ul>
+
+
+				</section>
 
 			</div>
+		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="index.html#area of interest">Area of Interest</a></li>
+						<li><a href="index.html#education">Education</a></li>
+						<li><a href="index.html#experience">Professional Experience</a></li>
+						<li><a href="index.html#projects">Projects</a></li>
+					</ul>
+				</nav>
 
-	</body>
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Contact</h2>
+					</header>
+					<ul class="contact">
+						<li class="icon brands fa-linkedin"><a
+								href="https://www.linkedin.com/in/narathip-rodwarna/">Narathip Rodwarna</a></li>
+						<li class="icon solid fa-envelope"><a href="mailto:nrodwarna@gmail.com">nrodwarna@gmail.com</a>
+						</li>
+						<li class="icon solid fa-phone">(+1) 917-756-4639</li>
+						<li class="icon solid fa-home">Champaign, IL 61820</li>
+
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+							UP</a>.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

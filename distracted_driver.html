@@ -27,6 +27,11 @@
 
 			background-color: #F5F6F7;
 		}
+
+		figcaption {
+			text-align: center;
+			font-style: italic;
+		}
 	</style>
 </head>
 
@@ -56,9 +61,18 @@
 
 					<div class="box">
 						<p>
-							The study addresses the critical issue of distracted driving through the investigation of two methods: Convolutional Neural Network (CNN) and Pose Estimation. It aims to develop accurate models to detect distracted driving behaviors. The CNN-based approach demonstrates high accuracy, particularly with grayscale images, and achieves faster convergence compared to transfer learning methods. </p>
+							The study addresses the critical issue of distracted driving through the investigation of
+							two methods: Convolutional Neural Network (CNN) and Pose Estimation. It aims to develop
+							accurate models to detect distracted driving behaviors. The CNN-based approach demonstrates
+							high accuracy, particularly with grayscale images, and achieves faster convergence compared
+							to transfer learning methods. </p>
 					</div>
-					<img src="images/distracted_driver/output_DEb8oT.gif" width="500" alt="" />
+					<figure>
+
+						<div class="center-image"><img src="images/distracted_driver/output_DEb8oT.gif" width="500"
+								alt="" /></div>
+						<figcaption>Source: State Farm Distracted Driver Detection, Kaggle</figcaption>
+					</figure>
 					<hr class="major" />
 
 					<h2>Introduction</h2>
@@ -77,7 +91,7 @@
 					<hr class="major" />
 					<h2>Goal</h2>
 					<p> The specific objectives include the development of a CNN model (Method 1) to detect driver
-						behavior and the integration of facial and upper body pose estimation, including hands, to
+						behavior and upper body pose estimation to
 						assess the level of driver distraction (Method 2).</p>
 
 					<hr class="major" />
@@ -101,7 +115,7 @@
 						<h2>Method</h2>
 						<dl>
 
-							<h3>CNN-based Method</h3>
+							<h3>CNN-based</h3>
 							<dd>
 								<p>The image processing pipeline comprises steps as follows. In Step 1, Image
 									Preprocessing, input images undergo cropping and resizing to 64 x 64 pixels.
@@ -141,19 +155,19 @@
 						<h2>Result</h2>
 						<dl>
 
-							<h3>CNN-based Method</h3>
+							<h3>CNN-based</h3>
 							<dd>
-								<p>After the training process, it was observed that both case 1 and case 2 demonstrated
+								<p>After the training process, it was observed that models with simple CNN demonstrated
 									the best performance compared to the other methods. The CNN with grayscale images
 									achieved an accuracy of 97.9%, while the CNN with RGB images achieved an accuracy of
 									97.7%. Furthermore, each label exhibited a prediction accuracy of over 93%.
-									Additionally, when the driver is distracted, both models in case 1 and case 2
-									demonstrated a high detection accuracy of 99.9%. In terms of image input, the
+									Additionally, when the driver is distracted, both models demonstrated a high
+									detection accuracy of 99.9%. In terms of image input, the
 									evaluation suggests
 									that grayscale images retain meaningful features, providing comparable results with
 									a smaller data size.
-									Regarding training time, it is notable that the simple CNNs in case 1 and case 2
-									achieve a 90% convergence much faster than models employing the transfer learning
+									Regarding training time, it is notable that the simple CNNs achieve a 90%
+									convergence much faster than models employing the transfer learning
 									method.
 									The simple CNNs reach 90% accuracy within the first 20 epochs,
 									a substantial improvement compared to the transfer learning approach.
@@ -179,10 +193,7 @@
 							<p> </p>
 							<h3>Pose Estimation Based</h3>
 							<dd>
-								<p>When the forward-facing 90-degree of lidar reading detects an obstacle at
-									a predetermined distance, the car is able to stop preventing any collision with
-									the identified object. After the objects are removed, the car can resume
-									following the lane.</p>
+
 								<div class="center-image">
 
 									<img src="images/distracted_driver/result_posr_est.png" width="700" alt="" />
@@ -238,7 +249,7 @@
 						</p>
 
 						<hr class="major" />
-						<h2>Related Skills</h2>
+						<h2>Related Skills and Tools</h2>
 						<ul>
 							<li>Computer Vision</li>
 							<li>Pytorch</li>
@@ -290,7 +301,7 @@
 					<ul class="contact">
 						<li class="icon brands fa-linkedin"><a
 								href="https://www.linkedin.com/in/narathip-rodwarna/">Narathip Rodwarna</a></li>
-						<li class="icon solid fa-envelope"><a href="mailto:rodwarna@gmail.com">nrodwarna@gmail.com</a>
+						<li class="icon solid fa-envelope"><a href="mailto:nrodwarna@gmail.com">nrodwarna@gmail.com</a>
 						</li>
 						<li class="icon solid fa-phone">(+1) 917-756-4639</li>
 						<li class="icon solid fa-home">Champaign, IL 61820</li>

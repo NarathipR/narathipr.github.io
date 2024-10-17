@@ -51,29 +51,28 @@
 				<!-- Content -->
 				<section>
 					<header class="main">
-						<h2>Vehicle Control and Localization</h2>
+						<h2>Robot Arm Manipulation</h2>
 					</header>
 
-					<img src="images/vehicle_control/rviz_full.png" width="1000" alt="" />
+					<img src="images/robot_manipulation/ur3.jpg" width="400" alt="" />
 					<h2>Description</h2>
-					<p>These tasks are components of ECE484 Principles of Safe Autonomy at the University of Illinois.
+					<p>These tasks are components of ECE470 Introduction to Robotics at the University of Illinois.
 					</p>
 
 					<hr class="major" />
 					<h2>Overview</h2>
 					<ol>
-						<li>Lane Detection</li>
-						<li>Lateral Controller</li>
-						<li>Particle Filters</li>
+						<li>Forward Kinematics & Inverse Kinematics</li>
+						<li>Hand-Eye Coordination</li>
 					</ol>
 
 					<hr class="major" />
-					<h2>1) Lane Detection</h2>
+					<h2>1) Forward Kinematics & Inverse Kinematics </h2>
 					<dl>
 						<h3>Implementation</h3>
 						<dd>
-							<p>For the lane detection task from a video, the steps are as follows:</p>
-							<dl>
+							<p>The system will receive joint angles and return the corresponding end-effector position (forward kinematics), as well as accept a desired position and use the robot's geometry to solve for the required joint angles (inverse kinematics).</p>
+							<!-- <dl>
 								<dt>Gradient Threshold</dt>
 								<dd>
 									<p>In the gradient binary image, we compute the gradient in both the x and y
@@ -107,54 +106,41 @@
 										second-order polynomial line.
 									</p>
 								</dd>
-							</dl>
+							</dl> -->
 						</dd>
-						<h3>Result</h3>
+						<h3>Demo</h3>
+						<video controls autoplay muted loop width="640" height="360">
+							<source src="https://github.com/NarathipR/NarathipR.github.io/tree/master/images/robot_manipulation/demo1.mp4" type="video/mp4">
+
+						</video>
+						<!-- <h3>Result</h3>
 						<video controls autoplay loop width="640" height="360">
 							<source src="images\vehicle_control\mp1_0830_web.mp4" type="video/mp4">
-						</video>
+						</video> -->
 					</dl>
 
 					<hr class="major" />
-					<h2>2) Lateral Controller</h2>
+					<h2>2) Hand-Eye Coordination</h2>
 					<dl>
 
 						<h3>Implementation</h3>
 						<dd>
-							<p>We integrate a lateral controller into a vehicle, which uses the Pure Pursuit
-								algorithm to calculate the steering angle. This algorithm focuses on a look-ahead point
-								positioned at a set distance ahead on the vehicle's path. Our method involves setting
-								the average of the two upcoming unreached waypoints as the look-ahead point. By doing
-								this, the vehicle can anticipate its path better, leading to smoother turns and
-								maintaining its course towards the next target point. This approach not only improves
-								driving stability but also simplifies the model.</p>
-
+							<p>
+							The task involves implementing hand-eye coordination for a robotic system using an overhead camera to view the workspace. The process consists of the following steps:
+							</p>
+							<ul>
+								<li>Camera Calibration: Calibrate the top-mounted camera to the robot arm's coordinate system, establishing a precise spatial relationship between the camera's view and the robot's workspace.</li>
+								<li>Image Processing: Implement image filtering techniques to detect and locate colored boxes within the camera's field of view.</li>
+								<li>Hand-Eye Coordination: Utilize the calibrated system and image processing results to enable the robot arm to accurately pick and place the detected boxes within the workspace.</li>
+							</ul>
 						</dd>
 
-
-						<h3>Result</h3>
-						<video controls autoplay loop width="640" height="360">
-							<source src="images\vehicle_control\mp2_2.mp4" type="video/mp4">
+						<h3>Demo</h3>
+						<video controls autoplay muted  loop width="640" height="360">
+							<source src="images\robot_manipulation\demo2.MOV" type="video/quicktime">
+							<source src="images\robot_manipulation\demo2.MOV" type="video/mp4">
 						</video>
 					</dl>
-
-					<hr class="major" />
-					<h2>3) Particle Filters</h2>
-					<dl>
-						<h3>Implementation</h3>
-						<dd>
-							<p>Lidar readings from 8 directions around the vehicle are utilized for vehicle localization
-								using particle filtering. The process involves sampling particle states, calculating
-								weights, and resampling particles to refine the vehicle's position estimate.</p>
-
-						</dd>
-
-						<h3>Result</h3>
-						<video controls autoplay loop width="640" height="360">
-							<source src="images\vehicle_control\mp3.mp4" type="video/mp4">
-						</video>
-					</dl>
-
 
 					<hr class="major" />
 					<h2>Related Skills and Tools</h2>
@@ -162,21 +148,17 @@
 						<li>Robot Operating System (ROS)</li>
 						<li>Computer Vision</li>
 						<li>OpenCV</li>
-						<li>State Estimation and Localization</li>
-						<li>Vehicle Control</li>
+						<li>Robot Manipulation</li>
+						<li>Universal Robots UR 3</li>
 					</ul>
 
 					<hr class="major" />
 					<h2>Contributors</h2>
 					<ul>
 						<li>Narathip Rodwarna</li>
-						<li>Chu-Lin Huang</li>
-						<li>Hsuan-Jung Pan</li>
+						<li>Vagish Sivaramakrishnan</li>
 					</ul>
-
-
 				</section>
-
 			</div>
 		</div>
 

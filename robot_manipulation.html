@@ -71,7 +71,7 @@
 					<dl>
 						<h3>Implementation</h3>
 						<dd>
-							<p>The system will receive joint angles and return the corresponding end-effector position (forward kinematics), as well as accept a desired position and use the robot's geometry to solve for the required joint angles (inverse kinematics).</p>
+							<p>The system determines the end-effector position from joint angles using forward kinematics, implemented in Python. It also calculates the required joint angles for a desired end-effector position through inverse kinematics, solved by the robot's geometry.</p>
 							<!-- <dl>
 								<dt>Gradient Threshold</dt>
 								<dd>
@@ -126,10 +126,10 @@
 						<h3>Implementation</h3>
 						<dd>
 							<p>
-							The task involves implementing hand-eye coordination for a robotic system using an overhead camera to view the workspace. The process consists of the following steps:
+							The task involves implementing hand-eye coordination for a robot arm using an overhead camera to view the workspace. The process consists of the following steps:
 							</p>
 							<ul>
-								<li>Camera Calibration: Calibrate the top-mounted camera to the robot arm's coordinate system, establishing a precise spatial relationship between the camera's view and the robot's workspace.</li>
+								<li>Camera Calibration: Calibrate the top-mounted camera to the reference coordinate system, establishing a precise spatial relationship between the camera's view and the robot's workspace.</li>
 								<li>Image Processing: Implement image filtering techniques to detect and locate colored boxes within the camera's field of view.</li>
 								<li>Hand-Eye Coordination: Utilize the calibrated system and image processing results to enable the robot arm to accurately pick and place the detected boxes within the workspace.</li>
 							</ul>
@@ -137,8 +137,7 @@
 
 						<h3>Demo</h3>
 						<video controls autoplay muted  loop width="640" height="360">
-							<source src="images\robot_manipulation\demo2.MOV" type="video/quicktime">
-							<source src="images\robot_manipulation\demo2.MOV" type="video/mp4">
+							<source src="images\robot_manipulation\demo2.mp4" type="video/mp4">
 						</video>
 					</dl>
 
